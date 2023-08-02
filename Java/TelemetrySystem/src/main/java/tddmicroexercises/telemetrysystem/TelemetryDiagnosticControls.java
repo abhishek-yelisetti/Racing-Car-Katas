@@ -9,11 +9,10 @@ public class TelemetryDiagnosticControls {
     private final Client telemetryClient;
     private final TelemetryTransmissionControl telemetryTransmissionControl;
 
-    public TelemetryDiagnosticControls() {
-        telemetryClient = new TelemetryClient();
+    public TelemetryDiagnosticControls(Client client, TelemetryTransmissionControl telemetryTransmissionControl) {
         diagnosticInfo = "";
-
-        telemetryTransmissionControl = new TelemetryTransmissionControlImpl();
+        this.telemetryClient = client;
+        this.telemetryTransmissionControl = telemetryTransmissionControl;
     }
 
     public String getDiagnosticInfo() {
